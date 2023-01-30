@@ -1,16 +1,9 @@
-function resolveAfter2Seconds() {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve("resolved");
-    }, 2000);
+const postApi = "http://localhost:3000/courses";
+
+fetch(postApi)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log({ data });
   });
-}
-
-async function asyncCall() {
-  console.log("calling");
-  const result = await resolveAfter2Seconds();
-  console.log(result);
-  // Expected output: "resolved"
-}
-
-asyncCall();
