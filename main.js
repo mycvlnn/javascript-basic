@@ -150,10 +150,7 @@ function startApp() {
     .then(function (response) {
       return response.json();
     })
-    .then(function (data) {
-      courses = data;
-      renderListCoures(data);
-    });
+    .then(renderListCoures);
 }
 
 // Event
