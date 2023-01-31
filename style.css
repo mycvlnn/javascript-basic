@@ -1,0 +1,80 @@
+.heading {
+  text-align: center;
+  font-size: 30px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 30px;
+}
+
+.col-8 {
+  width: 66.6666%;
+}
+
+.col-4 {
+  width: 33.3334%;
+}
+
+.title {
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  min-height: 38px;
+}
+
+label {
+  margin-top: 20px;
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.btn-submit {
+  margin: 20px auto;
+  padding: 8px 20px;
+}
+
+/* course item */
+#product-list {
+  padding: 0;
+  margin: 0 20px;
+  list-style: none;
+}
+
+.course {
+  margin-bottom: 20px;
+}
+
+.course__img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.course__name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.footer,
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.control__btn {
+  padding: 8px 20px;
+  margin: 0 4px;
+}
+
+.course__price {
+  font-size: 20px;
+  font-weight: bold;
+}

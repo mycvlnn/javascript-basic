@@ -6,13 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript basic</title>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
+    <h1 class="heading">Udemy</h1>
+    <div class="container">
 
-    <h1>Product</h1>
-    <ul id="product-list"></ul>
+        <div class="col-8">
+            <h2 class="title">List course</h2>
+            <ul id="product-list">
+
+            </ul>
+        </div>
+        <div class="col-4">
+            <form id="form-course">
+                <h2 id="title-form" class="title">Create course</h2>
+                <label>Name course</label>
+                <input type="text" name="name">
+                <label>Description</label>
+                <input type="text" name="description">
+                <label>Price</label>
+                <input type="text" name="coin">
+                <label>Image</label>
+                <input type="text" name="image">
+                <button id="btn-form" class="btn-submit">Create</button>
+            </form>
+        </div>
+    </div>
 
     <script src="main.js"></script>
 </body>
