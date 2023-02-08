@@ -54,7 +54,7 @@ function pushToastMessage({
   toasts.appendChild(toast);
 }
 
-btnWarning.onclick = function () {
+btnSuccess.onclick = function () {
   pushToastMessage({
     type: "success",
     title: "Success",
@@ -63,7 +63,7 @@ btnWarning.onclick = function () {
   });
 };
 
-btnSuccess.onclick = function () {
+btnWarning.onclick = function () {
   pushToastMessage({
     type: "warning",
     title: "Warning",
