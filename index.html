@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MP3</title>
-    <!-- Link icon -->
-    <link rel="icon" href="./assets//image/player.png" sizes="any" type="image/png">
+    <title>Toast message</title>
     <!-- Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
@@ -16,84 +14,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <!-- CSS -->
-    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
     <div class="app">
-        <!-- Dashboard section -->
-        <div class="dashboard">
-            <h4 class="heading">Now playing</h4>
-            <div class="song-playing">
-                <h2 class="name">Em của ngày hôm qua</h2>
-                <p class="author">Sơn Tùng MTP</p>
-                <div class="cd">
-                    <img src="https://picsum.photos/1000" alt="singer" class="cd-thumb" />
-                    <div class="cd__circle-1"></div>
-                    <div class="cd__circle-2"></div>
-                </div>
+        <div id="toasts"></div>
+
+        <div class="actions">
+            <div class="btn btn--success">
+                Success
             </div>
-
-            <div class="controls">
-                <div class="progress">
-                    <audio src="" id="audio"></audio>
-                    <div class="time">
-                        <p class="current">00:06</p>
-                        <p class="total">04:21</p>
-                    </div>
-                    <input class="input-range" value="0" min="0" max="100" step="1" type="range" id="progress-input">
-                </div>
-
-                <div class="actions">
-                    <div class="control-btn" id="random">
-                        <i class="fa-solid fa-shuffle"></i>
-                    </div>
-                    <div class="control-btn" id="backward-step">
-                        <i class="fa-solid fa-backward-step"></i>
-                    </div>
-                    <div class="control-btn" id="play">
-                        <i class="fa-solid fa-play"></i>
-                        <i class="fa-solid fa-pause"></i>
-                    </div>
-                    <div class="control-btn" id="forward-step">
-                        <i class="fa-solid fa-forward-step"></i>
-                    </div>
-                    <div class="control-btn" id="repeat">
-                        <i class="fa-solid fa-repeat"></i>
-                    </div>
-                </div>
-
-                <div class="volume">
-                    <div class="volume-type high">
-                        <i class="fa-solid fa-volume-xmark mute"></i>
-                        <i class="fa-solid fa-volume-low low"></i>
-                        <i class="fa-solid fa-volume-high high"></i>
-                    </div>
-                    <input class="input-range" value="0" min="0" max="100" step="1" type="range" id="volume-input">
-                    <div class="volume-number">Vol:
-                        <span>
-                            60
-                        </span>
-                    </div>
-                </div>
+            <div class="btn btn--warning">
+                Warning
             </div>
-
-            <div class="theme-switch-wrapper">
-                <label class="theme-switch" for="checkbox">
-                    <input type="checkbox" id="checkbox" />
-                    <div class="slider round"></div>
-                </label>
-            </div>
-
         </div>
-
-        <!-- playlist section -->
-        <div class="playlist">
-            <h4>Playlist</h4>
-            <div class="divided"></div>
-            <div id="song-list"></div>
-        </div>
-
     </div>
     <script src="./main.js"></script>
 </body>

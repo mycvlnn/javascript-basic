@@ -1,0 +1,150 @@
+:root {
+  --success-color: #1fa779;
+  --warning-color: #efa92c;
+  --info-color: #027bc3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+#toasts {
+  position: fixed;
+  right: 20px;
+  top: 10px;
+  z-index: 999;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all ease 0.3s;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(calc(100% + 30px));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+.toast + .toast {
+  margin-top: 16px;
+}
+
+.toast__border {
+  width: 5px;
+  height: 75px;
+  border-radius: 5px;
+  display: block;
+  background-color: var(--info-color);
+}
+
+.toast__icon {
+  padding: 0 16px;
+  font-size: 25px;
+  color: var(--info-color);
+}
+
+.toast--success .toast__border {
+  background: #1fa779;
+}
+
+.toast--success .toast__icon {
+  color: #1fa779;
+}
+
+.toast--info .toast__border {
+  background: var(--info-color);
+}
+
+.toast--info .toast__icon {
+  color: var(--info-color);
+}
+
+.toast--warning .toast__border {
+  background: var(--warning-color);
+}
+
+.toast--warning .toast__icon {
+  color: var(--warning-color);
+}
+
+.toast__info {
+  flex-grow: 1;
+}
+
+.toast__heading {
+  font-size: 18px;
+}
+
+.toast__description {
+  font-size: 14px;
+  color: #939599;
+}
+
+.toast__close {
+  color: #939599;
+  padding: 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+}
+
+.btn {
+  min-width: 80px;
+  background-color: orange;
+  font-size: 18px;
+  padding: 10px 24px;
+  border-radius: 22px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn.btn--success {
+  background-color: var(--success-color);
+}
+
+.btn.btn--warning {
+  background-color: var(--warning-color);
+}
+
+.btn + .btn {
+  margin-left: 10px;
+}
