@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toast message</title>
+    <title>FORM VALIDATION</title>
     <!-- Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
@@ -18,19 +18,112 @@
 </head>
 
 <body>
-    <div class="app">
-        <div id="toasts"></div>
+    <div class="main">
 
-        <div class="actions">
-            <div class="btn btn--success">
-                Success
+        <form action="" method="POST" class="form" id="form-1">
+            <h3 class="heading">Thành viên đăng ký</h3>
+            <p class="desc">Cùng nhau học lập trình miễn phí tại F8 ❤️</p>
+
+            <div class="spacer"></div>
+
+            <div class="form-group">
+                <label for="fullname" class="form-label">Tên đầy đủ</label>
+                <input id="fullname" name="fullname" type="text" placeholder="VD: Sơn Đặng" class="form-control">
+                <span class="form-message"></span>
             </div>
-            <div class="btn btn--warning">
-                Warning
+
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" name="email" type="text" placeholder="VD: email@domain.com" class="form-control">
+                <span class="form-message"></span>
             </div>
-        </div>
+
+            <div class="form-group">
+                <label for="password" class="form-label">Mật khẩu</label>
+                <input id="password" name="password" type="text" placeholder="Nhập mật khẩu" class="form-control">
+                <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="password_confirmation" class="form-label">Nhập lại mật khẩu</label>
+                <input id="password_confirmation" name="password_confirmation" placeholder="Nhập lại mật khẩu"
+                    type="text" class="form-control">
+                <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="province" class="form-label">Tỉnh/TP</label>
+                <select id="province" name="province" class="form-control">
+                    <option value="">Vui lòng nhập Tỉnh / Thành Phố</option>
+                    <option value="HN">Hà Nội</option>
+                    <option value="HP">Hải Phòng</option>
+                </select>
+                <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="gender" class="form-label">Gender</label>
+                <div class="input-control">
+                    <input value="male" name="gender" type="radio">
+                    <div class="label">Male</div>
+                </div>
+                <div class="input-control">
+                    <input value="female" name="gender" type="radio">
+                    <div class="label">Female</div>
+                </div>
+                <div class="input-control">
+                    <input value="other" name="gender" type="radio">
+                    <div class="label">Other</div>
+                </div>
+                <span class="form-message"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label for="hobby" class="form-label">Hobby</label>
+                <div class="input-control">
+                    <input value="game" name="hobby" type="checkbox">
+                    <div class="label">Play video game</div>
+                </div>
+                <div class="input-control">
+                    <input value="sport" name="hobby" type="checkbox">
+                    <div class="label">Sport</div>
+                </div>
+                <div class="input-control">
+                    <input value="other" name="hobby" type="checkbox">
+                    <div class="label">Other</div>
+                </div>
+                <span class="form-message"></span>
+            </div>
+
+            <button class="form-submit">Đăng ký</button>
+        </form>
+
     </div>
-    <script src="./main.js"></script>
+    <script src="./main.js">
+    </script>
+    <script>
+        Validator({
+            formID: '#form-1',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isRequired('#fullname'),
+                Validator.isRequired('#email'),
+                Validator.isEmail('#email'),
+                Validator.isMin('#password', 8, 'Mật khẩu phải lớn hơn 8 ký tự'),
+                Validator.isRequired('#password_confirmation', 'Please enter this field'),
+                Validator.isConfirmed('#password_confirmation', '#password', 'Mật khẩu không khớp.'),
+                Validator.isRequired('input[name="gender"]'),
+                Validator.isRequired('#province')
+            ],
+            onSubmit: function (data) {
+                // call api
+
+                console.log({ data })
+            }
+        })
+    </script>
 </body>
 
 </html>
